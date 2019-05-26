@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=8CurGcPPM0w
+https://www.youtube.com/watch?v=8CurGcPPM0w
+http://www.rabbithacks.com/esp8266/esp12-e-directly-usable-gpio-pins/
+https://components101.com/wireless/esp12e-pinout-datasheet
+https://hackaday.io/project/12869-esptool/log/42640-esp8266-12e-and-the-case-of-the-extra-pins
