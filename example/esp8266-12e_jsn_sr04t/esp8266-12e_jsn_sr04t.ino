@@ -3,9 +3,12 @@
 // Include the library:
 #include <NewPing.h>
 
-// Define Trig and Echo pin:
-#define trigPin 2
-#define echoPin 3
+// Define Trig and Echo pin: Arduion
+//#define trigPin 2
+//#define echoPin 3
+// Define Tring and Echo pin: ESP8266
+#define trigPin 12
+#define echoPin 13
 
 // Define maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500 cm:
 #define MAX_DISTANCE 400
@@ -14,8 +17,8 @@
 NewPing sonar = NewPing(trigPin, echoPin, MAX_DISTANCE);
 
 void setup() {
-  // Open the Serial Monitor at 9600 baudrate to see ping results:
-  Serial.begin(9600);
+  // Open the Serial Monitor at 115200 baudrate to see ping results:
+  Serial.begin(115200);
 }
 
 void loop() {
