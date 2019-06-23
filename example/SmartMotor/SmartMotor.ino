@@ -89,16 +89,12 @@ void setup() {
   pinMode(GPIO16, OUTPUT);
   Serial.println("Set different pin as output");
 
+  // Set switch off before connecting to wifi
+  digitalWrite(GPIO4, LOW);
+  digitalWrite(GPIO14, HIGH);
+  digitalWrite(GPIO16, HIGH);
 
-  //  pinMode(GPIO0, OUTPUT);
-  //  //////////////////////
-  ////  pinMode(TX, OUTPUT);
-  //  pinMode(GPIO2, OUTPUT);
-  ////  pinMode(RX, OUTPUT);
-  //  ///////////////////////
-  //  digitalWrite(GPIO0, HIGH);
-  //  digitalWrite(GPIO2, HIGH);
-  //  ///////////////////
+  /////////////////////////
   //  //  analogWrite(TX, 1023);
   //  //  analogWrite(GPIO2, 1023);
   //  //  analogWrite(RX, 1023);
@@ -127,7 +123,7 @@ void loop() {
     HTTPClient http;
     String baseUrl = "http://iot-cuddle.000webhostapp.com/iot/api/led/SmartMotor.php";
     //http://iot-cuddle.000webhostapp.com/iot/api/led/SmartMotor.php?wifi_status=on&distance=15
-//    String url = "http://iot-cuddle.000webhostapp.com/iot/api/led/SmartMotor.php?" + "wifi_status=" + wifi_status + "&distance=" + distance;
+    //    String url = "http://iot-cuddle.000webhostapp.com/iot/api/led/SmartMotor.php?" + "wifi_status=" + wifi_status + "&distance=" + distance;
     baseUrl += "?wifi_status=";
     baseUrl += wifi_status;
     baseUrl += "&distance=";
@@ -211,7 +207,7 @@ void loop() {
   } else {
     // Light off wifi signal
     Serial.println("There is no internet connection");
-    digitalWrite(GPIO4, HIGH);
+    digitalWrite(GPIO4, LOW);
     delay(10);
     Serial.println("GPIO 4 is off.");
   }
