@@ -1,6 +1,7 @@
 #include <DHT.h>
 #include <Adafruit_Sensor.h>
 
+#include <SoftwareSerial.h>
 #include <ezTime.h>
 #include <ESP8266WiFi.h>
 #define LOCALTZ_POSIX  "CET-1CEST,M3.4.0/2,M10.4.0/3"
@@ -17,6 +18,9 @@ float temperature = 0, humidity = 0, feelsLike = 0;
 char serialData;
 
 DHT dht(DHT_PIN, DHTTYPE);
+
+// Bluetooth varialbes
+//SoftwareSerial bluetooth(3, 1); // RX, TX
 
 void connectToWifi() {
   delay(1000);
@@ -52,8 +56,8 @@ void connectToWifi() {
 
 void setup() {
   // Setup serial port
-  Serial.begin(115200);
-  delay(10000);
+  Serial.begin(9600);
+  delay(5000);
   // wait for Serial port to connect. Needed for native USB port only
   while (!Serial) {
     delay(500);
